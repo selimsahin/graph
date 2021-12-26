@@ -4,7 +4,7 @@
 using namespace std;
 
 // TO DO:
-//  - Implement node as template to contain an arbitrary data member type: template <class Data> class Node {...}
+//  - Implement node as template to contain an arbitrary data member type, such as: template <class Data> class Node {...}
 
 class Node {
     public:
