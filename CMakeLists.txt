@@ -7,8 +7,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 include_directories(${CMAKE_PROJECT_NAME} "include")
 
 add_subdirectory(source)
-aux_source_directory(. ALL_SRCS)
-add_executable(${CMAKE_PROJECT_NAME} ${ALL_SRCS})
+file(GLOB MAIN_SRCS ${PROJECT_SOURCE_DIR}/main.cpp)
+add_executable(${CMAKE_PROJECT_NAME} ${MAIN_SRCS})
 target_link_libraries(${CMAKE_PROJECT_NAME} graph)
 
 
