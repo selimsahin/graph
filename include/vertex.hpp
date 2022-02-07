@@ -4,7 +4,7 @@ class Vertex {
     public:
         static Vertex CreateVertex(void *data, size_t size);
         uint64_t GetId() const { return id_; }
-        void* GetData() const { return data_; }
+        void GetData(void *buffer, size_t& size) const { buffer = data_; size = size_; }
     
     private:
         Vertex();
