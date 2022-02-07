@@ -17,8 +17,6 @@ class Graph {
 
         void PrintGraph();
 
-        bool Hello(int i, double d);
-
     private:
         EdgeImp edges;
         std::vector<Vertex> vertices;
@@ -30,10 +28,8 @@ void Graph<EdgeImp>::PrintGraph()
     std::cout << "Vertex List :\n";
 
     for (auto a : vertices)
-    {
         std::cout << a.GetId() << " - ";
-    }
-
+    
     std::cout << "\n**************************\n";
 }
 
@@ -54,12 +50,13 @@ template <class EdgeImp>
 void* Graph<EdgeImp>::DeleteVertex(uint32_t id)
 {
     void *data = nullptr;
+    size_t size = 0;
 
     for (auto iter = vertices.begin(); iter != vertices.end(); ++iter)
     {
         if (iter->GetId() == id)
         {
-            data = iter->GetData();
+            iter->GetData(data, size);
             vertices.erase( iter );
             break;
         }
